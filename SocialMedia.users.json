@@ -1,0 +1,264 @@
+[{
+  "_id": {
+    "$oid": "67a2f13cfb22d35268a97853"
+  },
+  "firstName": "Sudhir",
+  "lastName": "Kumar",
+  "email": "sk899626@gmail.com",
+  "password": "$2b$10$gmkTSheUF2PJmDdQmnsGT.Yt9jIXCc/H/pJtCMsSeH61V7WYu1wz.",
+  "picturePath": "image.jpeg",
+  "friends": [
+    "67a4380698848ca742711811",
+    "67a434a698848ca7427117cb",
+    "67a2fdde82677bfaaf79e25e",
+    "67a437af98848ca742711804",
+    "67a2f96790c778024294071a",
+    "67a435e898848ca7427117e9"
+  ],
+  "location": "Manpur gaya",
+  "occupation": "Student",
+  "viewedProfile": 6980,
+  "impressions": 5862,
+  "createdAt": {
+    "$date": "2025-02-05T05:03:56.774Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-18T09:46:15.069Z"
+  },
+  "__v": 38
+},
+{
+  "_id": {
+    "$oid": "67a2f96790c778024294071a"
+  },
+  "firstName": "Nandini",
+  "lastName": "Sahu",
+  "email": "nandini@gmail.com",
+  "password": "$2b$10$nld5CIk1x/ZaHR4KmihCROhuyNyVJAjgsRLfaAwUFMGvDnmfcxtt2",
+  "picturePath": "1.jpg",
+  "friends": [
+    "67a2f13cfb22d35268a97853"
+  ],
+  "location": "Kolkata , West Bengal",
+  "occupation": "Student",
+  "viewedProfile": 977,
+  "impressions": 3058,
+  "createdAt": {
+    "$date": "2025-02-05T05:38:47.741Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-18T09:22:25.975Z"
+  },
+  "__v": 16
+},
+{
+  "_id": {
+    "$oid": "67a2fa8390c7780242940727"
+  },
+  "firstName": "Mithilesh",
+  "lastName": "Kumar",
+  "email": "mithilesh@gmail.com",
+  "password": "$2b$10$CN.UCemHLGZy0RjSRoSzV.elKXDzAAIW4f88J/oA26vMHFOs.VtBy",
+  "picturePath": "2.jpg",
+  "friends": [],
+  "location": "Barail , Bihar",
+  "occupation": "Student",
+  "viewedProfile": 6932,
+  "impressions": 7691,
+  "createdAt": {
+    "$date": "2025-02-05T05:43:31.470Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-18T09:46:10.868Z"
+  },
+  "__v": 11
+},
+{
+  "_id": {
+    "$oid": "67a2fdde82677bfaaf79e25e"
+  },
+  "firstName": "Sachin",
+  "lastName": "Kushwaha",
+  "email": "sachin@gmail.com",
+  "password": "$2b$10$AFsbCVp7YWZm2TwgfzCqQ.bAdPekiJMBdEZp/sLOyoB2zOdUyjNx2",
+  "picturePath": "3.jpg",
+  "friends": [
+    "67a2f96790c778024294071a",
+    "67a2f13cfb22d35268a97853"
+  ],
+  "location": "Sarojini Nagar , New Delhi",
+  "occupation": "Student",
+  "viewedProfile": 1964,
+  "impressions": 8484,
+  "createdAt": {
+    "$date": "2025-02-05T05:57:50.205Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T06:03:00.752Z"
+  },
+  "__v": 9
+},
+{
+  "_id": {
+    "$oid": "67a4341d98848ca7427117be"
+  },
+  "firstName": "Kanhaiya",
+  "lastName": "Kumar",
+  "email": "kanhaiya@gmail.com",
+  "password": "$2b$10$aHzLe2UTy9ahDr/tDePmjeyC1yFC47T7xtPJcqnJM6rL7VchR6RhK",
+  "picturePath": "4.jpg",
+  "friends": [],
+  "location": "Madhubani , Bihar",
+  "occupation": "Student",
+  "viewedProfile": 483,
+  "impressions": 8668,
+  "createdAt": {
+    "$date": "2025-02-06T04:01:33.339Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T06:00:24.491Z"
+  },
+  "__v": 2
+},
+{
+  "_id": {
+    "$oid": "67a434a698848ca7427117cb"
+  },
+  "firstName": "Kholop",
+  "lastName": "Longkho",
+  "email": "kholop@gmail.com",
+  "password": "$2b$10$.1pGA8qsGFszdYCEm.ER/uhaR/BKToTVXaI2ou1pq2OUtAqih00B6",
+  "picturePath": "5.jpg",
+  "friends": [
+    "67a2f13cfb22d35268a97853",
+    "67a2fa8390c7780242940727"
+  ],
+  "location": "Arunachal Pradesh",
+  "occupation": "Student",
+  "viewedProfile": 2688,
+  "impressions": 243,
+  "createdAt": {
+    "$date": "2025-02-06T04:03:50.627Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-18T07:49:23.377Z"
+  },
+  "__v": 4
+},
+{
+  "_id": {
+    "$oid": "67a4355a98848ca7427117dc"
+  },
+  "firstName": "Priyawandana",
+  "lastName": "Ranawat",
+  "email": "priyawandana@gmail.com",
+  "password": "$2b$10$ptc/nVQnnhR5H20hbqIaRez1us6eIKqxm0SrvPI7dSPvACBiWMybO",
+  "picturePath": "6.jpg",
+  "friends": [],
+  "location": "Indore , Madhya Pradesh",
+  "occupation": "Student",
+  "viewedProfile": 3840,
+  "impressions": 714,
+  "createdAt": {
+    "$date": "2025-02-06T04:06:50.568Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-06T04:06:50.568Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67a435e898848ca7427117e9"
+  },
+  "firstName": "Aanchal",
+  "lastName": "Dhote",
+  "email": "aanchal@gmail.com",
+  "password": "$2b$10$MKBGwhaMM7hWW5B2MNIxau93ECuwPoP8MnAo8qOEoo5yZyx2LMeae",
+  "picturePath": "7.jpg",
+  "friends": [
+    "67a2f13cfb22d35268a97853"
+  ],
+  "location": "Tata Nagar ,  Jharkhand",
+  "occupation": "Student",
+  "viewedProfile": 4627,
+  "impressions": 8756,
+  "createdAt": {
+    "$date": "2025-02-06T04:09:12.532Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-18T09:46:15.074Z"
+  },
+  "__v": 1
+},
+{
+  "_id": {
+    "$oid": "67a4371698848ca7427117f6"
+  },
+  "firstName": "Prashant",
+  "lastName": "Suthar",
+  "email": "prashant@gmail.com",
+  "password": "$2b$10$bId8o2VNzf79GeNW1bDkduClTzGSk0S.zhZwvRd3nUdcUOKS9PaJe",
+  "picturePath": "8.jpg",
+  "friends": [],
+  "location": "Indore , Madhya Pradesh",
+  "occupation": "Student",
+  "viewedProfile": 7296,
+  "impressions": 2037,
+  "createdAt": {
+    "$date": "2025-02-06T04:14:14.517Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-06T04:14:14.517Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67a437af98848ca742711804"
+  },
+  "firstName": "Bhavya",
+  "lastName": "pandey",
+  "email": "bhavya@gmail.com",
+  "password": "$2b$10$S0GOoiPsHVpCdwOVrYMIQ.Djt..2TMCGwJrIXBQIqp5ReaxVIPZaq",
+  "picturePath": "9.jpg",
+  "friends": [
+    "67a2f13cfb22d35268a97853"
+  ],
+  "location": "Indore , Madhya Pradesh",
+  "occupation": "Student",
+  "viewedProfile": 7060,
+  "impressions": 7325,
+  "createdAt": {
+    "$date": "2025-02-06T04:16:47.363Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T06:45:37.056Z"
+  },
+  "__v": 1
+},
+{
+  "_id": {
+    "$oid": "67a4380698848ca742711811"
+  },
+  "firstName": "Ronit Raj",
+  "lastName": "Bhairwa",
+  "email": "ronit@gmail.com",
+  "password": "$2b$10$zPuBF0SoUthOPAlCeqwUX.EfS/5mBNbyMxg/SSfPvU1sHBgCRkYjS",
+  "picturePath": "10.jpg",
+  "friends": [
+    "67a2f13cfb22d35268a97853",
+    "67a2fa8390c7780242940727"
+  ],
+  "location": "Indore , Madhya Pradesh",
+  "occupation": "Student",
+  "viewedProfile": 1618,
+  "impressions": 6484,
+  "createdAt": {
+    "$date": "2025-02-06T04:18:14.518Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-18T07:49:19.574Z"
+  },
+  "__v": 6
+}]
