@@ -8,12 +8,12 @@
   "password": "$2b$10$gmkTSheUF2PJmDdQmnsGT.Yt9jIXCc/H/pJtCMsSeH61V7WYu1wz.",
   "picturePath": "image.jpeg",
   "friends": [
-    "67a4380698848ca742711811",
-    "67a434a698848ca7427117cb",
-    "67a2fdde82677bfaaf79e25e",
-    "67a437af98848ca742711804",
+    "67a2fa8390c7780242940727",
     "67a2f96790c778024294071a",
-    "67a435e898848ca7427117e9"
+    "67a4341d98848ca7427117be",
+    "67a435e898848ca7427117e9",
+    "67a437af98848ca742711804",
+    "67a4371698848ca7427117f6"
   ],
   "location": "Manpur gaya",
   "occupation": "Student",
@@ -23,9 +23,9 @@
     "$date": "2025-02-05T05:03:56.774Z"
   },
   "updatedAt": {
-    "$date": "2025-02-18T09:46:15.069Z"
+    "$date": "2025-03-28T06:42:07.469Z"
   },
-  "__v": 38
+  "__v": 64
 },
 {
   "_id": {
@@ -47,9 +47,9 @@
     "$date": "2025-02-05T05:38:47.741Z"
   },
   "updatedAt": {
-    "$date": "2025-02-18T09:22:25.975Z"
+    "$date": "2025-03-28T06:31:42.011Z"
   },
-  "__v": 16
+  "__v": 18
 },
 {
   "_id": {
@@ -60,7 +60,9 @@
   "email": "mithilesh@gmail.com",
   "password": "$2b$10$CN.UCemHLGZy0RjSRoSzV.elKXDzAAIW4f88J/oA26vMHFOs.VtBy",
   "picturePath": "2.jpg",
-  "friends": [],
+  "friends": [
+    "67a2f13cfb22d35268a97853"
+  ],
   "location": "Barail , Bihar",
   "occupation": "Student",
   "viewedProfile": 6932,
@@ -69,9 +71,9 @@
     "$date": "2025-02-05T05:43:31.470Z"
   },
   "updatedAt": {
-    "$date": "2025-02-18T09:46:10.868Z"
+    "$date": "2025-03-28T06:31:40.729Z"
   },
-  "__v": 11
+  "__v": 14
 },
 {
   "_id": {
@@ -82,10 +84,7 @@
   "email": "sachin@gmail.com",
   "password": "$2b$10$AFsbCVp7YWZm2TwgfzCqQ.bAdPekiJMBdEZp/sLOyoB2zOdUyjNx2",
   "picturePath": "3.jpg",
-  "friends": [
-    "67a2f96790c778024294071a",
-    "67a2f13cfb22d35268a97853"
-  ],
+  "friends": [],
   "location": "Sarojini Nagar , New Delhi",
   "occupation": "Student",
   "viewedProfile": 1964,
@@ -94,9 +93,9 @@
     "$date": "2025-02-05T05:57:50.205Z"
   },
   "updatedAt": {
-    "$date": "2025-02-17T06:03:00.752Z"
+    "$date": "2025-03-28T06:06:52.978Z"
   },
-  "__v": 9
+  "__v": 10
 },
 {
   "_id": {
@@ -107,7 +106,9 @@
   "email": "kanhaiya@gmail.com",
   "password": "$2b$10$aHzLe2UTy9ahDr/tDePmjeyC1yFC47T7xtPJcqnJM6rL7VchR6RhK",
   "picturePath": "4.jpg",
-  "friends": [],
+  "friends": [
+    "67a2f13cfb22d35268a97853"
+  ],
   "location": "Madhubani , Bihar",
   "occupation": "Student",
   "viewedProfile": 483,
@@ -116,9 +117,9 @@
     "$date": "2025-02-06T04:01:33.339Z"
   },
   "updatedAt": {
-    "$date": "2025-02-17T06:00:24.491Z"
+    "$date": "2025-03-28T06:31:43.964Z"
   },
-  "__v": 2
+  "__v": 5
 },
 {
   "_id": {
@@ -129,10 +130,7 @@
   "email": "kholop@gmail.com",
   "password": "$2b$10$.1pGA8qsGFszdYCEm.ER/uhaR/BKToTVXaI2ou1pq2OUtAqih00B6",
   "picturePath": "5.jpg",
-  "friends": [
-    "67a2f13cfb22d35268a97853",
-    "67a2fa8390c7780242940727"
-  ],
+  "friends": [],
   "location": "Arunachal Pradesh",
   "occupation": "Student",
   "viewedProfile": 2688,
@@ -141,9 +139,9 @@
     "$date": "2025-02-06T04:03:50.627Z"
   },
   "updatedAt": {
-    "$date": "2025-02-18T07:49:23.377Z"
+    "$date": "2025-03-28T06:31:37.954Z"
   },
-  "__v": 4
+  "__v": 7
 },
 {
   "_id": {
@@ -163,9 +161,9 @@
     "$date": "2025-02-06T04:06:50.568Z"
   },
   "updatedAt": {
-    "$date": "2025-02-06T04:06:50.568Z"
+    "$date": "2025-03-28T06:40:31.271Z"
   },
-  "__v": 0
+  "__v": 2
 },
 {
   "_id": {
@@ -187,9 +185,9 @@
     "$date": "2025-02-06T04:09:12.532Z"
   },
   "updatedAt": {
-    "$date": "2025-02-18T09:46:15.074Z"
+    "$date": "2025-03-28T06:31:46.162Z"
   },
-  "__v": 1
+  "__v": 3
 },
 {
   "_id": {
@@ -200,7 +198,9 @@
   "email": "prashant@gmail.com",
   "password": "$2b$10$bId8o2VNzf79GeNW1bDkduClTzGSk0S.zhZwvRd3nUdcUOKS9PaJe",
   "picturePath": "8.jpg",
-  "friends": [],
+  "friends": [
+    "67a2f13cfb22d35268a97853"
+  ],
   "location": "Indore , Madhya Pradesh",
   "occupation": "Student",
   "viewedProfile": 7296,
@@ -209,9 +209,9 @@
     "$date": "2025-02-06T04:14:14.517Z"
   },
   "updatedAt": {
-    "$date": "2025-02-06T04:14:14.517Z"
+    "$date": "2025-03-28T06:41:35.973Z"
   },
-  "__v": 0
+  "__v": 3
 },
 {
   "_id": {
@@ -233,9 +233,9 @@
     "$date": "2025-02-06T04:16:47.363Z"
   },
   "updatedAt": {
-    "$date": "2025-02-17T06:45:37.056Z"
+    "$date": "2025-03-28T06:33:42.250Z"
   },
-  "__v": 1
+  "__v": 3
 },
 {
   "_id": {
@@ -246,10 +246,7 @@
   "email": "ronit@gmail.com",
   "password": "$2b$10$zPuBF0SoUthOPAlCeqwUX.EfS/5mBNbyMxg/SSfPvU1sHBgCRkYjS",
   "picturePath": "10.jpg",
-  "friends": [
-    "67a2f13cfb22d35268a97853",
-    "67a2fa8390c7780242940727"
-  ],
+  "friends": [],
   "location": "Indore , Madhya Pradesh",
   "occupation": "Student",
   "viewedProfile": 1618,
@@ -258,7 +255,7 @@
     "$date": "2025-02-06T04:18:14.518Z"
   },
   "updatedAt": {
-    "$date": "2025-02-18T07:49:19.574Z"
+    "$date": "2025-03-28T06:42:07.474Z"
   },
-  "__v": 6
+  "__v": 11
 }]
