@@ -1,7 +1,6 @@
 import React from "react";
 import { Avatar, Card, CardContent, Typography, Box } from "@mui/material";
 import { formatDistanceToNow } from "date-fns";
-import UserImage from "../../components/UserImage";
 
 const CommentCard = ({ comment, usersData }) => {
   // Find user details using userId
