@@ -4,6 +4,9 @@ import PersonRemoveIcon from "@mui/icons-material/PersonRemove";
 import { useSelector } from "react-redux";
 import Navbar from "./Navbar";
 import UserWidget from "./widgets/UserWidget";
+import WidgetWrapper from "../components/WidgetWrapper";
+import { CheckCircle, Cancel } from "@mui/icons-material"; 
+import FriendListWidget from "./widgets/FriendListWidget";
 
 const FriendRequests = () => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
@@ -50,7 +53,7 @@ const FriendRequests = () => {
 
   const fetchFriendRequests = async () => {
     try {
-      const response = await fetch(`http://localhost:3001/users/${_id}/friendRequests`, {
+      const response = await fetch(`http://localhost:3001/users/${_id}/requests`, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
@@ -65,84 +68,67 @@ const FriendRequests = () => {
 
   const handleAcceptRequest = async (requestId) => {
     try {
-      const response = await fetch(`http://localhost:3001/users/${_id}/acceptFriend/${requestId}`, {
+      const response = await fetch(`http://localhost:3001/users/${_id}/respond-request`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
+        body: JSON.stringify({ senderId: requestId, accept: true }), // Accept friend request
       });
+  
       if (response.ok) {
         setFriendRequests(friendRequests.filter((req) => req._id !== requestId));
-        fetchFriends();
+        fetchFriends(); // Refresh friends list after accepting
       }
     } catch (error) {
       console.error("Error accepting friend request:", error);
     }
   };
-
+  
   const handleRejectRequest = async (requestId) => {
     try {
-      await fetch(`http://localhost:3001/users/${_id}/rejectFriend/${requestId}`, {
-        method: "DELETE",
+      const response = await fetch(`http://localhost:3001/users/${_id}/respond-request`, {
+        method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
+        body: JSON.stringify({ senderId: requestId, accept: false }), // Reject friend request
       });
-      setFriendRequests(friendRequests.filter((req) => req._id !== requestId));
+  
+      if (response.ok) {
+        setFriendRequests(friendRequests.filter((req) => req._id !== requestId));
+      }
     } catch (error) {
       console.error("Error rejecting friend request:", error);
     }
   };
-
+  
   if (!user) return <Typography>Loading...</Typography>;
 
   return (
     <Box>
-    <Navbar/>
-    <Box
-      width="100%"
-      padding="2rem 6%"
-      display={isNonMobileScreens ? "flex" : "block"}
-      gap="0.5rem"
-      justifyContent="space-between"
-    >
-      <Box flexBasis={isNonMobileScreens ? "26%" : undefined}>
-        <UserWidget userId={_id} picturePath={picturePath} />
-      </Box>
+      <Navbar/>
       <Box
-        flexBasis={isNonMobileScreens ? "71%" : undefined}
+          width="100%"
+          padding="2rem 6%"
+          display={isNonMobileScreens ? "flex" : "block"}
+          gap="0.5rem"
+          justifyContent="space-between"
+        >
+       <Box flexBasis={isNonMobileScreens ? "26%" : undefined}>
+        <UserWidget userId={_id} picturePath={picturePath} />
+       </Box>
+       
+        <Box
+        flexBasis={isNonMobileScreens ? "40%" : undefined}
         mt={isNonMobileScreens ? undefined : "2rem"}
-      >
-        <Grid container spacing={3}>
-        <Grid item xs={12} md={8}>
-          <Card sx={{ p: 2 }}>
-            <Typography variant="h6">Friends ({friends.length})</Typography>
-            <Divider sx={{ my: 1 }} />
-            <Box sx={{ maxHeight: 200, overflowY: "auto" }}>
-              {friends.length > 0 ? (
-                friends.map((friend) => (
-                  <Box key={friend._id} display="flex" alignItems="center" justifyContent="space-between" sx={{ mb: 2 }}>
-                    <Box display="flex" alignItems="center">
-                      <Avatar src={`http://localhost:3001/assets/${friend.picturePath}`} sx={{ mr: 2 }} />
-                      <Typography>{friend.firstName} {friend.lastName}</Typography>
-                    </Box>
-                    <IconButton color="error">
-                      <PersonRemoveIcon />
-                    </IconButton>
-                  </Box>
-                ))
-              ) : (
-                <Typography>No friends yet.</Typography>
-              )}
-            </Box>
-          </Card>
-
-          <Card sx={{ p: 2, mt: 2 }}>
+        >
+          <WidgetWrapper>
             <Typography variant="h6">Friend Requests ({friendRequests.length})</Typography>
             <Divider sx={{ my: 1 }} />
-            <Box sx={{ maxHeight: 200, overflowY: "auto" }}>
+            <Box sx={{ maxHeight: 375, overflowY: "auto" }}>
               {friendRequests.length > 0 ? (
                 friendRequests.map((request) => (
                   <Box key={request._id} display="flex" alignItems="center" justifyContent="space-between" sx={{ mb: 2 }}>
@@ -151,10 +137,10 @@ const FriendRequests = () => {
                       <Typography>{request.firstName} {request.lastName}</Typography>
                     </Box>
                     <Box>
-                      <Button variant="contained" color="primary" size="small" sx={{ mr: 1 }} onClick={() => handleAcceptRequest(request._id)}>
+                      <Button variant="contained"  color="success" startIcon={<CheckCircle />} size="small" sx={{ mr: 1 }} onClick={() => handleAcceptRequest(request._id)}>
                         Accept
                       </Button>
-                      <Button variant="contained" color="secondary" size="small" onClick={() => handleRejectRequest(request._id)}>
+                      <Button variant="contained" color="error" size="small"  startIcon={<Cancel />} sx={{ mr: 1 }} onClick={() => handleRejectRequest(request._id)}>
                         Reject
                       </Button>
                     </Box>
@@ -164,12 +150,17 @@ const FriendRequests = () => {
                 <Typography>No friend requests.</Typography>
               )}
             </Box>
-          </Card>
-        </Grid>
-      </Grid>
+         </WidgetWrapper> 
+         </Box>
+         
 
-
-      </Box>
+         <Box
+        flexBasis={isNonMobileScreens ? "30%" : undefined}
+        mt={isNonMobileScreens ? undefined : "2rem"}
+        >
+        <FriendListWidget userId={_id}  />
+        </Box>
+     
     </Box>
   </Box>
 

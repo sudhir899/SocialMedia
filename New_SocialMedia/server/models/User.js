@@ -33,6 +33,11 @@ const UserSchema = new mongoose.Schema(
       type: Array,
       default: [],
     },
+    friendRequests:
+      [{ 
+        type: mongoose.Schema.Types.ObjectId,
+         ref: "User" 
+    }],
     location: String,
     occupation: String,
     viewedProfile: Number,

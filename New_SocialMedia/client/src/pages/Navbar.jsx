@@ -86,7 +86,7 @@ const Navbar = () => {
           </IconButton>
           <Message sx={{ fontSize: "25px" }} />
           <IconButton  onClick={() => navigate("/friendrequest")} >
-              <GroupIcon sx={{ fontSize: "25px" }} />
+              <GroupIcon sx={{ color:dark,fontSize: "25px" }} />
           </IconButton>
           <Notifications sx={{ fontSize: "25px" }} />
           <Help sx={{ fontSize: "25px" }} />
@@ -163,7 +163,9 @@ const Navbar = () => {
               )}
             </IconButton>
             <Message sx={{ fontSize: "25px" }} />
-            <GroupIcon sx={{ fontSize: "25px" }} />
+            <IconButton  onClick={() => navigate("/friendrequest")} >
+              <GroupIcon sx={{ color:dark,fontSize: "25px" }} />
+            </IconButton>
             <Notifications sx={{ fontSize: "25px" }} />
             <Help sx={{ fontSize: "25px" }} />
             <FormControl variant="standard" value={fullName}>
