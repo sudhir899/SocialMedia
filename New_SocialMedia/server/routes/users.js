@@ -3,7 +3,7 @@ import {
   getUser,
   getUsersByIds,
   getUserFriends,
-  addRemoveFriend,
+  RemoveFriend,
   getFriendRequests,
   sendFriendRequest ,
   respondToFriendRequest ,
@@ -22,6 +22,6 @@ router.get("/:id/requests",verifyToken,getFriendRequests);
 router.post("/:id/send-request",verifyToken,sendFriendRequest );
 router.post("/:id/respond-request",verifyToken,respondToFriendRequest );
 /* UPDATE */
-router.patch("/:id/:friendId", verifyToken, addRemoveFriend);
+router.patch("/:id/:friendId", verifyToken, RemoveFriend);
 
 export default router;

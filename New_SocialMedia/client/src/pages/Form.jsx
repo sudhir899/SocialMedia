@@ -72,9 +72,15 @@ const Form = () => {
     );
     const savedUser = await savedUserResponse.json();
     onSubmitProps.resetForm();
-
+    
     if (savedUser) {
       setPageType("login");
+
+    }
+    if (savedUserResponse.ok) {
+      toast.success(result.message);
+    } else {
+      toast.error(result.message || "Something went wrong");
     }
   };
 
@@ -86,6 +92,7 @@ const Form = () => {
     });
     const loggedIn = await loggedInResponse.json();
     onSubmitProps.resetForm();
+    
     if (loggedIn) {
       dispatch(
         setLogin({
@@ -94,6 +101,11 @@ const Form = () => {
         })
       );
       navigate("/home");
+    }
+    if (loggedInResponse.ok) {
+      toast.success(result.message);
+    } else {
+      toast.error(result.message || "Something went wrong");
     }
   };
 

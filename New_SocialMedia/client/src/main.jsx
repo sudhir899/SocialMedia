@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import authReducer from "./state";
 import { configureStore } from "@reduxjs/toolkit";
+import { Toaster } from 'sonner'
 import { Provider } from "react-redux";
 import {
   persistStore,
@@ -36,6 +37,7 @@ root.render(
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistStore(store)}>
         <App />
+      <Toaster position="top-right" richColors />
       </PersistGate>
     </Provider>
   </React.StrictMode>

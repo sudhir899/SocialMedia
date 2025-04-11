@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { setFriends, setRecommendation } from "../state";
 import FlexBetween from "./FlexBetween";
 import UserImage from "./UserImage";
+import { toast } from 'sonner'
 
 const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
   const dispatch = useDispatch();
@@ -21,35 +22,69 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
 
   const isFriend = friends.find((friend) => friend._id === friendId);
 
-  const patchFriend = async () => {
-    const response = await fetch(
-      `http://localhost:3001/users/${_id}/${friendId}`,
-      {
-        method: "PATCH",
+
+
+const patchFriend = async () => {
+  try {
+    if (!isFriend) {
+      const response = await fetch(`http://localhost:3001/users/${_id}/send-request`, {
+        method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
+        body: JSON.stringify({ receiverId: friendId }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast.success(result.message);
+      } else {
+        toast.error(result.message || "Something went wrong");
       }
-    );
-    const data = await response.json();
-    dispatch(setFriends({ friends: data }));
-    const res = await fetch(
-      `http://localhost:3001/users/${_id}/recommend`,
-      {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
+    } else {
+      const response = await fetch(
+        `http://localhost:3001/users/${_id}/${friendId}`,
+        {
+          method: "PATCH",
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      const data = await response.json();
+      dispatch(setFriends({ friends: data }));
+      if (response.ok) {
+        toast.success(result.message);
+      } else {
+        toast.error(result.message || "Something went wrong");
       }
-    );
+    }
+
+    // Refresh recommendations
+    const res = await fetch(`http://localhost:3001/users/${_id}/recommend`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
+
     const data1 = await res.json();
     dispatch(setRecommendation({ recommendList: data1 }));
-  };
+  } catch (error) {
+    toast.error("Something went wrong");
+    console.error("patchFriend error:", error);
+  }
+};
 
   return (
+   
     <FlexBetween>
+
       <FlexBetween gap="1rem">
         <UserImage image={userPicturePath} size="55px" />
         <Box

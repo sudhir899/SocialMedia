@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, Typography, Avatar, Box, Grid, Button, IconButton, Divider,useMediaQuery } from "@mui/material";
-import PersonRemoveIcon from "@mui/icons-material/PersonRemove";
+import { Typography, Avatar, Box,  Button,  Divider,useMediaQuery } from "@mui/material";
 import { useSelector } from "react-redux";
 import Navbar from "./Navbar";
 import UserWidget from "./widgets/UserWidget";
