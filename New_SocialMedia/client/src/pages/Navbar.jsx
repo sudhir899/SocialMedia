@@ -25,6 +25,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setMode, setLogout } from "../state";
 import { useNavigate } from "react-router-dom";
 import FlexBetween from "../components/FlexBetween";
+import NotificationPopup from "./widgets/NotificationPopup";
 
 const Navbar = () => {
   const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
@@ -32,6 +33,20 @@ const Navbar = () => {
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
+
+
+
+  const [anchorNotif, setAnchorNotif] = useState(null);
+  const isNotifOpen = Boolean(anchorNotif);
+  const handleNotifClick = (event) => {
+    setAnchorNotif(anchorNotif ? null : event.currentTarget);
+  };
+  const handleNotifClose = () => {
+    setAnchorNotif(null);
+  };
+  
+
+
 
   const theme = useTheme();
   const neutralLight = theme.palette.neutral.light;
@@ -88,7 +103,15 @@ const Navbar = () => {
           <IconButton  onClick={() => navigate("/friendrequest")} >
               <GroupIcon sx={{ color:dark,fontSize: "25px" }} />
           </IconButton>
-          <Notifications sx={{ fontSize: "25px" }} />
+          <IconButton onClick={handleNotifClick}>
+            <Notifications sx={{color:dark, fontSize: "25px" }} />
+          </IconButton>
+          <NotificationPopup
+            anchorEl={anchorNotif}
+            open={isNotifOpen}
+            onClose={handleNotifClose}
+          />
+
           <Help sx={{ fontSize: "25px" }} />
           <FormControl variant="standard" value={fullName}>
             <Select
@@ -131,8 +154,8 @@ const Navbar = () => {
           bottom="0"
           height="100%"
           zIndex="10"
-          maxWidth="500px"
-          minWidth="300px"
+          maxWidth="150px"
+          minWidth="150px"
           backgroundColor={background}
         >
           {/* CLOSE ICON */}
@@ -166,7 +189,14 @@ const Navbar = () => {
             <IconButton  onClick={() => navigate("/friendrequest")} >
               <GroupIcon sx={{ color:dark,fontSize: "25px" }} />
             </IconButton>
-            <Notifications sx={{ fontSize: "25px" }} />
+            <IconButton onClick={handleNotifClick}>
+              <Notifications sx={{color:dark, fontSize: "25px" }} />
+            </IconButton>
+            <NotificationPopup
+              anchorEl={anchorNotif}
+              open={isNotifOpen}
+              onClose={handleNotifClose}
+            />
             <Help sx={{ fontSize: "25px" }} />
             <FormControl variant="standard" value={fullName}>
               <Select
