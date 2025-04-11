@@ -8,12 +8,10 @@
   "password": "$2b$10$gmkTSheUF2PJmDdQmnsGT.Yt9jIXCc/H/pJtCMsSeH61V7WYu1wz.",
   "picturePath": "image.jpeg",
   "friends": [
-    "67a2fa8390c7780242940727",
-    "67a2f96790c778024294071a",
-    "67a4341d98848ca7427117be",
     "67a435e898848ca7427117e9",
+    "67a4371698848ca7427117f6",
     "67a437af98848ca742711804",
-    "67a4371698848ca7427117f6"
+    "67a4380698848ca742711811"
   ],
   "location": "Manpur gaya",
   "occupation": "Student",
@@ -23,9 +21,17 @@
     "$date": "2025-02-05T05:03:56.774Z"
   },
   "updatedAt": {
-    "$date": "2025-03-28T06:42:07.469Z"
+    "$date": "2025-04-04T08:43:36.909Z"
   },
-  "__v": 64
+  "__v": 121,
+  "friendRequests": [
+    {
+      "$oid": "67a4355a98848ca7427117dc"
+    },
+    {
+      "$oid": "67a2fa8390c7780242940727"
+    }
+  ]
 },
 {
   "_id": {
@@ -36,9 +42,7 @@
   "email": "nandini@gmail.com",
   "password": "$2b$10$nld5CIk1x/ZaHR4KmihCROhuyNyVJAjgsRLfaAwUFMGvDnmfcxtt2",
   "picturePath": "1.jpg",
-  "friends": [
-    "67a2f13cfb22d35268a97853"
-  ],
+  "friends": [],
   "location": "Kolkata , West Bengal",
   "occupation": "Student",
   "viewedProfile": 977,
@@ -47,9 +51,14 @@
     "$date": "2025-02-05T05:38:47.741Z"
   },
   "updatedAt": {
-    "$date": "2025-03-28T06:31:42.011Z"
+    "$date": "2025-04-04T09:22:20.357Z"
   },
-  "__v": 18
+  "__v": 30,
+  "friendRequests": [
+    {
+      "$oid": "67a2f13cfb22d35268a97853"
+    }
+  ]
 },
 {
   "_id": {
@@ -60,9 +69,7 @@
   "email": "mithilesh@gmail.com",
   "password": "$2b$10$CN.UCemHLGZy0RjSRoSzV.elKXDzAAIW4f88J/oA26vMHFOs.VtBy",
   "picturePath": "2.jpg",
-  "friends": [
-    "67a2f13cfb22d35268a97853"
-  ],
+  "friends": [],
   "location": "Barail , Bihar",
   "occupation": "Student",
   "viewedProfile": 6932,
@@ -71,9 +78,10 @@
     "$date": "2025-02-05T05:43:31.470Z"
   },
   "updatedAt": {
-    "$date": "2025-03-28T06:31:40.729Z"
+    "$date": "2025-04-04T07:05:57.420Z"
   },
-  "__v": 14
+  "__v": 22,
+  "friendRequests": []
 },
 {
   "_id": {
@@ -93,9 +101,14 @@
     "$date": "2025-02-05T05:57:50.205Z"
   },
   "updatedAt": {
-    "$date": "2025-03-28T06:06:52.978Z"
+    "$date": "2025-04-04T09:04:35.032Z"
   },
-  "__v": 10
+  "__v": 20,
+  "friendRequests": [
+    {
+      "$oid": "67a2f13cfb22d35268a97853"
+    }
+  ]
 },
 {
   "_id": {
@@ -106,9 +119,7 @@
   "email": "kanhaiya@gmail.com",
   "password": "$2b$10$aHzLe2UTy9ahDr/tDePmjeyC1yFC47T7xtPJcqnJM6rL7VchR6RhK",
   "picturePath": "4.jpg",
-  "friends": [
-    "67a2f13cfb22d35268a97853"
-  ],
+  "friends": [],
   "location": "Madhubani , Bihar",
   "occupation": "Student",
   "viewedProfile": 483,
@@ -117,9 +128,10 @@
     "$date": "2025-02-06T04:01:33.339Z"
   },
   "updatedAt": {
-    "$date": "2025-03-28T06:31:43.964Z"
+    "$date": "2025-04-04T07:06:47.244Z"
   },
-  "__v": 5
+  "__v": 15,
+  "friendRequests": []
 },
 {
   "_id": {
@@ -139,9 +151,10 @@
     "$date": "2025-02-06T04:03:50.627Z"
   },
   "updatedAt": {
-    "$date": "2025-03-28T06:31:37.954Z"
+    "$date": "2025-04-04T07:07:02.099Z"
   },
-  "__v": 7
+  "__v": 12,
+  "friendRequests": []
 },
 {
   "_id": {
@@ -161,9 +174,10 @@
     "$date": "2025-02-06T04:06:50.568Z"
   },
   "updatedAt": {
-    "$date": "2025-03-28T06:40:31.271Z"
+    "$date": "2025-04-04T07:20:17.665Z"
   },
-  "__v": 2
+  "__v": 11,
+  "friendRequests": []
 },
 {
   "_id": {
@@ -185,9 +199,10 @@
     "$date": "2025-02-06T04:09:12.532Z"
   },
   "updatedAt": {
-    "$date": "2025-03-28T06:31:46.162Z"
+    "$date": "2025-04-04T07:21:59.392Z"
   },
-  "__v": 3
+  "__v": 14,
+  "friendRequests": []
 },
 {
   "_id": {
@@ -209,9 +224,10 @@
     "$date": "2025-02-06T04:14:14.517Z"
   },
   "updatedAt": {
-    "$date": "2025-03-28T06:41:35.973Z"
+    "$date": "2025-04-04T07:23:26.039Z"
   },
-  "__v": 3
+  "__v": 9,
+  "friendRequests": []
 },
 {
   "_id": {
@@ -233,9 +249,10 @@
     "$date": "2025-02-06T04:16:47.363Z"
   },
   "updatedAt": {
-    "$date": "2025-03-28T06:33:42.250Z"
+    "$date": "2025-04-04T07:25:52.925Z"
   },
-  "__v": 3
+  "__v": 12,
+  "friendRequests": []
 },
 {
   "_id": {
@@ -246,7 +263,9 @@
   "email": "ronit@gmail.com",
   "password": "$2b$10$zPuBF0SoUthOPAlCeqwUX.EfS/5mBNbyMxg/SSfPvU1sHBgCRkYjS",
   "picturePath": "10.jpg",
-  "friends": [],
+  "friends": [
+    "67a2f13cfb22d35268a97853"
+  ],
   "location": "Indore , Madhya Pradesh",
   "occupation": "Student",
   "viewedProfile": 1618,
@@ -255,7 +274,77 @@
     "$date": "2025-02-06T04:18:14.518Z"
   },
   "updatedAt": {
-    "$date": "2025-03-28T06:42:07.474Z"
+    "$date": "2025-04-04T07:26:31.627Z"
   },
-  "__v": 11
+  "__v": 27,
+  "friendRequests": []
+},
+{
+  "_id": {
+    "$oid": "67efa05f1c2ce43e95e10f87"
+  },
+  "firstName": "Aniket",
+  "lastName": "Singh",
+  "email": "aniket@gmail.com",
+  "password": "$2b$10$kR3UPoMqwf46tZmpGp3jNuWeF4cqJikP21Z/Rcp9hkyi3Nhj.2ygC",
+  "picturePath": "Crepe_Ginger.jpg",
+  "friends": [],
+  "friendRequests": [],
+  "location": "Trichy",
+  "occupation": "Student",
+  "viewedProfile": 5341,
+  "impressions": 7117,
+  "createdAt": {
+    "$date": "2025-04-04T09:03:27.297Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-04T09:03:27.297Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67efa1551c2ce43e95e10fa1"
+  },
+  "firstName": "Anjali ",
+  "lastName": "Meena",
+  "email": "anjali@gmail.com",
+  "password": "$2b$10$rlVsKae4.vc2Pd/PZrKPW.KzODpTS/vf89G44CB4sFrSivAwH6Ls6",
+  "picturePath": "Bharangi.jpg",
+  "friends": [],
+  "friendRequests": [],
+  "location": "Bhopal",
+  "occupation": "Student",
+  "viewedProfile": 7948,
+  "impressions": 4986,
+  "createdAt": {
+    "$date": "2025-04-04T09:07:33.426Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-04T09:07:33.426Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67efa5c24c8cc6b17b9a21b9"
+  },
+  "firstName": "asdfa",
+  "lastName": "raja",
+  "email": "kjasddfhk@gmail.com",
+  "password": "$2b$10$46zfeT2XdNMjExMwEmvCh.uLjMsOIxzGUFw9oG6Iz6eWKBirrmsCe",
+  "picturePath": "Bastard_Teak.jpg",
+  "friends": [],
+  "friendRequests": [],
+  "location": "sadfnas",
+  "occupation": "oasdhfkasjl",
+  "viewedProfile": 59,
+  "impressions": 9497,
+  "createdAt": {
+    "$date": "2025-04-04T09:26:26.717Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-04T09:26:26.717Z"
+  },
+  "__v": 0
 }]
