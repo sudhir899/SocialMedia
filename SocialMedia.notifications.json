@@ -1,0 +1,45 @@
+[{
+  "_id": {
+    "$oid": "68008a80818de1009a479f44"
+  },
+  "sender": "6617874e58f3d6b62d182fa2",
+  "receiver": "67a2f13cfb22d35268a97853",
+  "type": "friend-request",
+  "desc": "John sent you a friend request"
+},
+{
+  "_id": {
+    "$oid": "68008a80818de1009a479f45"
+  },
+  "sender": "6617874e58f3d6b62d182fa2",
+  "receiver": "67a2f13cfb22d35268a97853",
+  "type": "message",
+  "desc": "John sent you a new message"
+},
+{
+  "_id": {
+    "$oid": "68008a80818de1009a479f46"
+  },
+  "sender": "6617899e58f3d6b62d182faa",
+  "receiver": "6617882e58f3d6b62d182fa7",
+  "type": "like",
+  "desc": "Emily liked your post"
+},
+{
+  "_id": {
+    "$oid": "68008a80818de1009a479f47"
+  },
+  "sender": "66178aaa58f3d6b62d182fab",
+  "receiver": "6617882e58f3d6b62d182fa7",
+  "type": "comment",
+  "desc": "Alex commented on your post"
+},
+{
+  "_id": {
+    "$oid": "68008a80818de1009a479f48"
+  },
+  "sender": "6617874e58f3d6b62d182fa2",
+  "receiver": "67a2f13cfb22d35268a97853",
+  "type": "friend-request-accepted",
+  "desc": "John accepted your friend request"
+}]
