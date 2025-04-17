@@ -110,6 +110,7 @@ const Navbar = () => {
             anchorEl={anchorNotif}
             open={isNotifOpen}
             onClose={handleNotifClose}
+            receiverId={user._id}
           />
 
           <Help sx={{ fontSize: "25px" }} />
@@ -196,6 +197,7 @@ const Navbar = () => {
               anchorEl={anchorNotif}
               open={isNotifOpen}
               onClose={handleNotifClose}
+              receiverId={user._id}
             />
             <Help sx={{ fontSize: "25px" }} />
             <FormControl variant="standard" value={fullName}>
