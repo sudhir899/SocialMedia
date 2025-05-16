@@ -24,6 +24,7 @@ import WidgetWrapper from "../../components/WidgetWrapper";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "../../state";
+import {toast} from 'sonner';
 
 const MyPostWidget = ({ picturePath }) => {
   const dispatch = useDispatch();
@@ -36,25 +37,79 @@ const MyPostWidget = ({ picturePath }) => {
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
   const mediumMain = palette.neutral.mediumMain;
   const medium = palette.neutral.medium;
+  const [loading, setLoading] = useState(false);
 
   const handlePost = async () => {
-    const formData = new FormData();
-    formData.append("userId", _id);
-    formData.append("description", post);
-    if (image) {
-      formData.append("picture", image);
-      formData.append("picturePath", image.name);
-    }
+    try {
+    setLoading(true);
+       // 1. Moderate text
+       const textRes = await fetch("http://localhost:3001/posts/moderateText", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ text: post }),
+      });
+      
+      const { status} = await textRes.json();
 
-    const response = await fetch(`http://localhost:3001/posts`, {
-      method: "POST",
-      headers: { Authorization: `Bearer ${token}` },
-      body: formData,
-    });
-    const posts = await response.json();
-    dispatch(setPosts({ posts }));
+      if (status === "flagged") {
+        toast.error("Text is not related to technology/computer science!");
+        setLoading(false);
+        return;
+      }
+
+      // 2. Moderate image (if provided)
+      if (image) {
+        const moderationForm = new FormData();
+        moderationForm.append("image", image);
+        const imgRes = await fetch("http://localhost:3001/posts/moderateImage", {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          body: moderationForm,
+        });
+        
+        const {status1} = await imgRes.json();
+        if (status1 === "flagged") {
+          toast.error("Image is not related to technology/computer science!");
+          setLoading(false);
+          return;
+        }
+      }
+      // Create post
+    if((!image && status==="allowed") || (image && status1==="allowed")){
+      const formData = new FormData();
+      formData.append("userId", _id);
+      formData.append("description", post);
+      if (image) {
+        formData.append("picture", image);
+        formData.append("picturePath", image.name);
+      }
+
+      const response = await fetch(`http://localhost:3001/posts`, {
+        method: "POST",
+        headers: { Authorization: `Bearer ${token}` },
+        body: formData,
+      });
+      const posts = await response.json();
+      dispatch(setPosts({ posts }));
+      if(response.ok){
+        toast.success("Post Created Successfully");
+      }
+      else{
+      toast.error("Something went wrong");
+      }
+    }
     setImage(null);
-    setPost("");
+      setPost("");
+
+  } catch (err) {
+    toast.error("Failed to submit post.");
+  }
+  setLoading(false);
   };
 
   return (
@@ -165,6 +220,7 @@ const MyPostWidget = ({ picturePath }) => {
         >
           POST
         </Button>
+        {loading && <p>Loading...</p>}
       </FlexBetween>
     </WidgetWrapper>
   );

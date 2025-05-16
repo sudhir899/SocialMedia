@@ -18,7 +18,6 @@ const CommentCard = ({ comment, usersData }) => {
 
       {/* Comment Content */}
       <CardContent sx={{ flex: 1, p: 0, overflow: "hidden" }}>
-        {/* Username & Time in One Row */}
         <Box display="flex" alignItems="center" flexWrap="wrap">
           <Typography variant="subtitle2" fontWeight="bold" sx={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
             {user ? `${user.firstName} ${user.lastName}` : `User ${comment.userId}`}
@@ -28,7 +27,6 @@ const CommentCard = ({ comment, usersData }) => {
           </Typography>
         </Box>
 
-        {/* Comment Text (Handles Long Content) */}
         <Typography variant="body2" color="text.secondary" sx={{ whiteSpace: "pre-wrap", wordBreak: "break-word", mt: 0.5 }}>
           {comment.commentText}
         </Typography>

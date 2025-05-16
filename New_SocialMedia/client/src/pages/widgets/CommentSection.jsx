@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Card, CardContent, TextField, Button, Typography, Box, useTheme } from "@mui/material";
 import { useSelector } from "react-redux";
 import CommentCard from "./CommentCard";
+import {toast} from 'sonner';
 
 const CommentSection = ({ comments: initialComments, postId }) => {
   const [comments, setComments] = useState(initialComments); 
@@ -44,7 +45,24 @@ const CommentSection = ({ comments: initialComments, postId }) => {
     e.preventDefault();
     if (newComment.trim() === "") return;
 
-   
+    // 1. Moderate Comment
+    const textRes = await fetch("http://localhost:3001/posts/moderateComment", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ text: newComment }),
+    });
+    
+    const { status} = await textRes.json();
+
+    if (status === "flagged") {
+      toast.error("Comment contain toxic words or Hate Speech");
+      return;
+    }
+
+   if(status==="allowed"){
     const tempComment = {
       userId: _id,
       commentText: newComment,
@@ -68,12 +86,14 @@ const CommentSection = ({ comments: initialComments, postId }) => {
 
       if (response.ok) {
         setComments(data.updatedComments);
+        toast.success("Comment sent Successfully!");
       } else {
         console.error("Error:", data.message);
       }
     } catch (error) {
       console.error("Failed to post comment:", error);
     }
+  }
   };
 
   return (

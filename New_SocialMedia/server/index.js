@@ -15,7 +15,8 @@ import notificationRoutes from "./routes/notifications.js";
 import { register } from "./controllers/auth.js";
 import { createPost } from "./controllers/posts.js";
 import { verifyToken } from "./middleware/auth.js";
-
+import {moderateImage} from "./controllers/moderation.js";
+ 
 
 /* CONFIGURATIONS */
 const __filename = fileURLToPath(import.meta.url);
@@ -49,6 +50,8 @@ const upload = multer({ storage });
 /* ROUTES WITH FILES */
 app.post("/auth/register", upload.single("picture"), register);
 app.post("/posts", verifyToken, upload.single("picture"), createPost);
+app.post("/posts/moderateImage",verifyToken, upload.single("image"), moderateImage);
+
 
 // /* ROUTES */
 app.use("/auth", authRoutes);  
