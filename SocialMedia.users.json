@@ -11,7 +11,8 @@
     "67a435e898848ca7427117e9",
     "67a4371698848ca7427117f6",
     "67a437af98848ca742711804",
-    "67a4380698848ca742711811"
+    "67a4380698848ca742711811",
+    "683f341713be390a5ba8345e"
   ],
   "location": "Manpur gaya",
   "occupation": "Student",
@@ -21,9 +22,9 @@
     "$date": "2025-02-05T05:03:56.774Z"
   },
   "updatedAt": {
-    "$date": "2025-04-04T08:43:36.909Z"
+    "$date": "2025-06-03T17:46:19.446Z"
   },
-  "__v": 121,
+  "__v": 123,
   "friendRequests": [
     {
       "$oid": "67a4355a98848ca7427117dc"
@@ -78,10 +79,14 @@
     "$date": "2025-02-05T05:43:31.470Z"
   },
   "updatedAt": {
-    "$date": "2025-04-04T07:05:57.420Z"
+    "$date": "2025-06-03T17:43:18.807Z"
   },
-  "__v": 22,
-  "friendRequests": []
+  "__v": 23,
+  "friendRequests": [
+    {
+      "$oid": "683f341713be390a5ba8345e"
+    }
+  ]
 },
 {
   "_id": {
@@ -128,10 +133,14 @@
     "$date": "2025-02-06T04:01:33.339Z"
   },
   "updatedAt": {
-    "$date": "2025-04-04T07:06:47.244Z"
+    "$date": "2025-06-02T16:09:57.812Z"
   },
-  "__v": 15,
-  "friendRequests": []
+  "__v": 16,
+  "friendRequests": [
+    {
+      "$oid": "67a2f13cfb22d35268a97853"
+    }
+  ]
 },
 {
   "_id": {
@@ -327,24 +336,26 @@
 },
 {
   "_id": {
-    "$oid": "67efa5c24c8cc6b17b9a21b9"
+    "$oid": "683f341713be390a5ba8345e"
   },
-  "firstName": "asdfa",
-  "lastName": "raja",
-  "email": "kjasddfhk@gmail.com",
-  "password": "$2b$10$46zfeT2XdNMjExMwEmvCh.uLjMsOIxzGUFw9oG6Iz6eWKBirrmsCe",
-  "picturePath": "Bastard_Teak.jpg",
-  "friends": [],
+  "firstName": "Naman",
+  "lastName": "Jain",
+  "email": "naman@gmail.com",
+  "password": "$2b$10$qeBtdrXFXc423.5Mf8p.F.SG.CJdTJ1P/KSJG.Pgkuyq0pn/n7GaK",
+  "picturePath": "205122097.jpeg",
+  "friends": [
+    "67a2f13cfb22d35268a97853"
+  ],
   "friendRequests": [],
-  "location": "sadfnas",
-  "occupation": "oasdhfkasjl",
-  "viewedProfile": 59,
-  "impressions": 9497,
+  "location": "Madhya Pradesh",
+  "occupation": "Student",
+  "viewedProfile": 5704,
+  "impressions": 4856,
   "createdAt": {
-    "$date": "2025-04-04T09:26:26.717Z"
+    "$date": "2025-06-03T17:42:47.449Z"
   },
   "updatedAt": {
-    "$date": "2025-04-04T09:26:26.717Z"
+    "$date": "2025-06-03T17:46:19.460Z"
   },
-  "__v": 0
+  "__v": 1
 }]
