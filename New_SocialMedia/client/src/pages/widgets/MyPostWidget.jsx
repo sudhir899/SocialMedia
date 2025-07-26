@@ -59,7 +59,7 @@ const MyPostWidget = ({ picturePath }) => {
         setLoading(false);
         return;
       }
-
+      var status1="flagged";
       // 2. Moderate image (if provided)
       if (image) {
         const moderationForm = new FormData();
@@ -72,7 +72,8 @@ const MyPostWidget = ({ picturePath }) => {
           body: moderationForm,
         });
         
-        const {status1} = await imgRes.json();
+        const imgJson = await imgRes.json();
+        status1 = imgJson.status;
         if (status1 === "flagged") {
           toast.error("Image is not related to technology/computer science!");
           setLoading(false);

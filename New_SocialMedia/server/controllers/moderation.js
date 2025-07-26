@@ -41,8 +41,10 @@ export const moderateText = async (req, res) => {
 
 
 // Image Moderation
+
 import fs from "fs";
 import path from "path";
+// import axios from "axios";
 
 export const moderateImage = async (req, res) => {
   try {
@@ -52,30 +54,14 @@ export const moderateImage = async (req, res) => {
       return res.status(400).json({ error: "No image uploaded" });
     }
 
-    // Read image from disk
     const imagePath = path.join("public", "assets", req.file.filename);
     const imageBuffer = fs.readFileSync(imagePath);
-    const imageBase64 = imageBuffer.toString('base64').replace(/^data:image\/\w+;base64,/, '');
+    const base64Image = `data:image/jpeg;base64,${imageBuffer.toString("base64")}`;
 
-    // Correct API request format for CLIP model
+    // Send image to Hugging Face API
     const response = await axios.post(
-      "https://api-inference.huggingface.co/models/openai/clip-vit-large-patch14",
-      {
-        inputs: imageBase64, // Base64 string directly
-        parameters: {
-          candidate_labels: [
-            "technology",
-            "computer science", 
-            "sports",
-            "movies",
-            "politics",
-            "fashion",
-            "meme",
-            "random photo",
-            "others"
-          ],
-        }
-      },
+      "https://api-inference.huggingface.co/models/google/vit-base-patch16-224",
+      { inputs: base64Image },
       {
         headers: {
           Authorization: `Bearer ${process.env.HUGGINGFACE_API_TOKEN}`,
@@ -84,54 +70,48 @@ export const moderateImage = async (req, res) => {
       }
     );
 
-    // Handle API response
-    if (!response.data || !Array.isArray(response.data)) {
-      throw new Error("Unexpected API response format");
+    if (!response.data || !response.data.length) {
+      throw new Error("Unexpected API response");
     }
 
-    // The CLIP API returns an array of results - take the first one
-    const result = response.data[0];
-    const labels = result.labels || [];
-    const scores = result.scores || [];
-    
-    if (labels.length === 0) {
-      throw new Error("No labels returned from API");
-    }
+    const topPrediction = response.data[0];
+    console.log(response.data);
+    console.log("Top predicted label:", topPrediction.label, "with score:", topPrediction.score);
 
-    const topLabel = labels[0];
-    console.log("Top predicted label:", topLabel);
+    const techLabels = [
+  'web site, website, internet site, site',
+  'desktop computer',
+  'screen, crt screen',
+  'hand-held computer, hand-held microcomputer',
+  'laptop',
+  'computer keyboard',
+  'cellular telephone',
+  'modem',
+  'printer'
+];
 
-    // Check if image is tech-related
-    if (topLabel === "technology" || topLabel === "computer science") {
-      return res.status(200).json({ 
-        status: "allowed", 
-        label: topLabel,
-        confidence: scores[0] 
-      });
-    } else {
-      return res.status(200).json({ 
-        status: "flagged", 
-        label: topLabel,
-        confidence: scores[0]
-      });
-    }
+const normalized = topPrediction.label.toLowerCase().trim();
+const isTech = techLabels.includes(normalized);
+    res.status(200).json({
+      status: isTech ? "allowed" : "flagged",
+    });
   } catch (error) {
-    console.error("Moderation Failed:", error?.response?.data || error.message);
-    res.status(500).json({ 
+    console.error("Moderation Failed:", error.message);
+    res.status(500).json({
       error: "Image moderation failed",
-      details: error.message 
+      details: error.message,
     });
   } finally {
-    // Clean up: delete the uploaded file after processing
     if (req.file) {
       try {
         fs.unlinkSync(path.join("public", "assets", req.file.filename));
-      } catch (cleanupError) {
-        console.error("Failed to clean up image file:", cleanupError);
+      } catch (err) {
+        console.error("Failed to delete image file:", err);
       }
     }
   }
 };
+
 
 
 

@@ -13,8 +13,11 @@ const CommentSection = ({ comments: initialComments, postId }) => {
   const { _id } = useSelector((state) => state.user);
 
   useEffect(() => {
-    setComments(initialComments); 
-  }, [initialComments]);
+  const sorted = [...initialComments].sort(
+    (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+  );
+  setComments(sorted);
+}, [initialComments]);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -85,8 +88,9 @@ const CommentSection = ({ comments: initialComments, postId }) => {
       const data = await response.json();
 
       if (response.ok) {
-        setComments(data.updatedComments);
         toast.success("Comment sent Successfully!");
+        setComments(data.updatedComments);
+        
       } else {
         console.error("Error:", data.message);
       }
